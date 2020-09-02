@@ -9,13 +9,14 @@
         var cookie = getCookie('uid');
         var uniq_session = cookie;
 
-        if(cookie == '' || cookie == null) {
+        if (cookie == '' || cookie == null) {
           var uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 12);
           console.log('uid:' + uid)
           setCookie('uid', uid,  40)
           cookie = getCookie('uid');
           uniq_session = cookie;
         }
+
         function setCookie(cname, cvalue, exdays) {
           var d = new Date();
           d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -27,7 +28,7 @@
           var name = cname + "=";
           var decodedCookie = decodeURIComponent(document.cookie);
           var ca = decodedCookie.split(';');
-          for(var i = 0; i <ca.length; i++) {
+          for (var i = 0; i <ca.length; i++) {
               var c = ca[i];
               while (c.charAt(0) == ' ') {
                   c = c.substring(1);
@@ -40,66 +41,84 @@
         }
 
         console.log('version B: cookie:' + cookie)
-
     </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: Feel free to modify anything inside main.css-->
-    <!-- TODO: You can even have a new/different css for Version B -->
+    <!-- TODO: Feel free to modify anything inside main.css -->
+    <!-- You can even have a new/different css for Version B -->
     <link rel="stylesheet" href="../static/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Find Memphis Taxis online</title>
+    <title>cact-I + cact-you = cact-us</title>
   </head>
 
   <body>
     <header>
-      <h1>Memphis Taxis Version B</h1>
-        <!-- Some of the ideas could be, making it pretty, making it look real, make it look reliable
-            choosing attractive image etc, showing that your taxis are cheaper than X/Y..
-            Show your creativity!
-
-            At a minimum, we at least require you change the name of buttons.
-             -->
-        <!-- TODO: For those tech savvy users, feel free to beautify the site, using css. -->
-         <!-- TODO: Feel free to update the content -->
-      <p>This page contains information about taxi and cab companies in Memphis, Tennessee.</p>
-      <p>Not endorsed by any of the companies listed, or the city of Memphis.</p>
+      <!-- TODO: Remove the "(B Version)" from the header before
+           collecting data -->
+      <h1>cact-I + cact-you = cact-us (B version)</h1>
+      <!-- Ideas: making it pretty, making it look real, making it look reliable,
+          choosing different images, etc. Show your creativity!
+          We want to see meaningful differences -->
+      <!-- Feel free to beautify the site, and/or update the content-->
+      <i>An online succulent store
+        for your inner plant lady.
+      </i>
     </header>
 
-    <div class="vendor-wrapper">
-      <img src="../static/memphis.png" class="vendor-photo" />
-
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">TODO: Change me</button>
-       <p>Safe, Reliable Taxi Services from Yellow Cab and Checker Cab are available
-              in the Memphis Metro area 24 hours a day.</p>
-    </div>
+    <!-- If you add any new buttons, you need to update the javascript file, for
+    corresponding button id, so that clicks of that button could be logged -->
 
     <div class="vendor-wrapper">
-      <img src="../static/memphis2.png" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">TODO: Change me</button>
-       <p>Our drivers are the most professional drivers in the industry. Our drivers
-              are licensed and required to successfully complete a formal training.</p>
+      <img src="../static/coppercombo.png" class="vendor-photo" />
+      <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">
+        Add To Cart
+      </button>
+      <i id="mp1-added" style="visibility:hidden;"> Added!</i>
+      <p>Stunning succulent combo, featuring 3 adolescent cacti in
+        industrial copper pots. <i>$39.99</i>
+      </p>
     </div>
-
-     <div class="vendor-wrapper">
-    <img src="../static/uber.png" class="vendor-photo" />
-
-    <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">TODO: Change me</button>
-     <p> We are so much cheaper than taxis..! </p>
+    <div class="vendor-wrapper">
+      <img src="../static/geoprickly.jpg" class="vendor-photo" />
+      <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">
+        Add To Cart
+      </button>
+      <i id="mp2-added" style="visibility:hidden;"> Added!</i>
+      <p>Beautiful prickly pair in modern geometric pots. <i>$44.99</i>
+      </p>
     </div>
 
     <div class="vendor-wrapper">
-      <img src="../static/premiere.png" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">TODO: Change me</button>
-       <p>Our goal is to efficiently
-              transport our passengers in a safe, polite and timely manner at a fair
-              price.</p>
+      <img src="../static/garden.jpg" class="vendor-photo" />
+      <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">
+        Add To Cart
+      </button>
+      <i id="mp3-added" style="visibility:hidden;"> Added!</i>
+      <p>Cacti and succulent mini-garden in a congenial and rustic pot. <i>$35.99</i>
+      </p>
     </div>
 
+    <div class="vendor-wrapper">
+      <img src="../static/garden-combo.jpg" class="vendor-photo" />
+      <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">
+        Add To Cart
+      </button>
+      <i id="mp4-added" style="visibility:hidden;"> Added!</i>
+      <p>Cacti, succulent, and garden combo in handcrafted pots. <i>$109.99</i>
+      </p>
+    </div>
+
+    <div class="vendor-wrapper">
+      <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
+        <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+        <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
+      </span>
+    </div>
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
@@ -116,8 +135,10 @@
               var clickObjectID = 'mp1'
               console.log('Click Time:' + clickTime)
               sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              // TODO: Feel free to make this point to different site
-              window.location.href = "http://www.yellowcabofmemphis.com/"
+              var count = parseInt(document.getElementById("cart")
+                                            .getAttribute('data-count')) + 1
+              document.getElementById("cart").setAttribute('data-count', count.toString())
+              document.getElementById("mp1-added").style.visibility = "visible"
         })
 
 
@@ -127,8 +148,10 @@
               var clickObjectID = 'mp2'
               console.log('Click Time:' + clickTime)
               sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              // TODO: Feel free to make this point to different site
-              window.location.href = "https://www.ridecharge.com/s/tn-memphis/taxi-sedan-limo-shuttle"
+              var count = parseInt(document.getElementById("cart")
+                                            .getAttribute('data-count')) + 1
+              document.getElementById("cart").setAttribute('data-count', count.toString())
+              document.getElementById("mp2-added").style.visibility = "visible"
         })
 
           $("#mp3").on("click", function(d) {
@@ -137,8 +160,10 @@
               var clickObjectID = 'mp3'
               console.log('Click Time:' + clickTime)
               sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              // TODO: Feel free to make this point to different site
-              window.location.href = "https://www.uber.com/cities/memphis/"
+              var count = parseInt(document.getElementById("cart")
+                                            .getAttribute('data-count')) + 1
+              document.getElementById("cart").setAttribute('data-count', count.toString())
+              document.getElementById("mp3-added").style.visibility = "visible"
         })
 
             $("#mp4").on("click", function(d) {
@@ -147,13 +172,16 @@
               var clickObjectID = 'mp4'
               console.log('Click Time:' + clickTime)
               sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              // TODO: Feel free to make this point to different site
-              window.location.href = "https://premierofmemphis.com/contact-us/"
+              var count = parseInt(document.getElementById("cart")
+                                            .getAttribute('data-count')) + 1
+              document.getElementById("cart").setAttribute('data-count', count.toString())
+              document.getElementById("mp4-added").style.visibility = "visible"
         })
 
-
         function sendData(timeLoaded, clickTime, clickObjectID, cook){
-              var dataObj = { 'version': 'B', 'pageLoadTime': timeLoaded , 'clickTime': clickTime , 'HtmlElementID': clickObjectID, 'UniqueSession' :uniq_session};
+              var dataObj = { 'version': 'B', 'pageLoadTime': timeLoaded ,
+              'clickTime': clickTime , 'HtmlElementID': clickObjectID,
+              'UniqueSession' :uniq_session};
               console.log(JSON.stringify(dataObj))
                $.ajax({
                    type: 'POST',

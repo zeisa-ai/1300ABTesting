@@ -7,16 +7,16 @@
 ## Overview
 
 A/B testing is a user research technique, which is used to test
-which among the A or B version is better design.
+whether the A or B version is a better design.
 
-For a commercial marketplace the success metric could be
+For a commercial marketplac, the success metric could be
 calculated based on "conversion rate".
 
 
 ## What does this project do?
 
-This project does simple A/B testing, of 2 versions of a website.
-The metrics collected could then be used to see which version 
+This project does simple A/B testing of 2 versions of a website.
+The metrics collected could then be used to see which version
 among the baseline(A) or variant(B) performed better.
 
 
@@ -30,4 +30,3 @@ among the baseline(A) or variant(B) performed better.
 2017-09-22T04:15:14.822574+00:00 app[web.1]: AB_TESTING: B 1506053712624 1506053714784 ca1 1506053712526
 2017-09-22T04:15:16.682459+00:00 app[web.1]: AB_TESTING: B 1506053712624 1506053716671 ca2 1506053712526
 2017-09-22T04:15:17.769221+00:00 app[web.1]: AB_TESTING: B 1506053712624 1506053717759 ca1 1506053712526
-
