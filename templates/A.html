@@ -69,52 +69,56 @@
 
     <!-- If you add any new buttons, you need to update the javascript file, for
     corresponding button id, so that clicks of that button could be logged -->
+    <div class="content-pane">
+      <div class="vendor-wrapper" id="mp1">
+        <img src="../static/coppercombo.png" class="vendor-photo" />
+        <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">
+          Add To Cart
+        </button>
+        <span><span id="mp1-added">0</span> in cart</span>
+        <p>Stunning succulent combo, featuring 3 adolescent cacti in
+          industrial copper pots. <i>$9.99</i>
+        </p>
+      </div>
 
-    <div class="vendor-wrapper">
-      <img src="../static/coppercombo.png" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">
-        Add To Cart
-      </button>
-      <i id="mp1-added" style="visibility:hidden;"> Added!</i>
-      <p>Stunning succulent combo, featuring 3 adolescent cacti in
-        industrial copper pots. <i>$39.99</i>
-      </p>
-    </div>
-    <div class="vendor-wrapper">
-      <img src="../static/geoprickly.jpg" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">
-        Add To Cart
-      </button>
-      <i id="mp2-added" style="visibility:hidden;"> Added!</i>
-      <p>Beautiful prickly pair in modern geometric pots. <i>$44.99</i>
-      </p>
-    </div>
+      <div class="vendor-wrapper" id="mp2">
+        <img src="../static/geoprickly.jpg" class="vendor-photo" />
+        <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">
+          Add To Cart
+        </button>
+        <span><span id="mp2-added">0</span> in cart</span>
+        <p>Beautiful prickly pair in modern geometric pots. <i>$14.99</i>
+        </p>
+      </div>
 
-    <div class="vendor-wrapper">
-      <img src="../static/garden.jpg" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">
-        Add To Cart
-      </button>
-      <i id="mp3-added" style="visibility:hidden;"> Added!</i>
-      <p>Cacti and succulent mini-garden in a congenial and rustic pot. <i>$35.99</i>
-      </p>
-    </div>
+      <div class="vendor-wrapper" id="mp3">
+        <img src="../static/garden.jpg" class="vendor-photo" />
+        <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">
+          Add To Cart
+        </button>
+        <span><span id="mp3-added">0</span> in cart</span>
+        <p>Cacti and succulent mini-garden in a congenial and rustic pot. <i>$25.99</i>
+        </p>
+      </div>
 
-    <div class="vendor-wrapper">
-      <img src="../static/garden-combo.jpg" class="vendor-photo" />
-      <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">
-        Add To Cart
-      </button>
-      <i id="mp4-added" style="visibility:hidden;"> Added!</i>
-      <p>Cacti, succulent, and garden combo in handcrafted pots. <i>$109.99</i>
-      </p>
-    </div>
+      <div class="vendor-wrapper" id="mp4">
+        <img src="../static/garden-combo.jpg" class="vendor-photo" />
+        <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">
+          Add To Cart
+        </button>
+        <span><span id="mp4-added">0</span> in cart</span>
+        <p>Cacti, succulent, and garden combo in handcrafted pots. <i>$34.99</i>
+        </p>
+      </div>
 
-    <div class="vendor-wrapper">
-      <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
-        <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-        <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
-      </span>
+      <div id="cart-wrapper">
+        <a onclick='navigateToCheckout()'>
+        <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
+          <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+          <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
+        </span> CART
+      </a>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -124,56 +128,70 @@
             timeLoaded =  Date.now();
             console.log('Page Load:' + timeLoaded)
             sendData(timeLoaded, 0.0, 0.0, uniq_session)
+
+            // Update counts based on saved data in URL params.
+            // If you add more cacti, you'll want to update this to include them here.
+            if(window.location.href.includes('&')) {
+              addToCart('mp1', /* num = */ int(getParameterByName('mp1')));
+              addToCart('mp2', /* num = */ int(getParameterByName('mp2')));
+              addToCart('mp3', /* num = */ int(getParameterByName('mp3')));
+              addToCart('mp4', /* num = */ int(getParameterByName('mp4')));
+            }
           });
 
         $("#mp1").on("click", function(d) {
-              // Retrieve the object from storage
-              var clickTime = Date.now()
-              var clickObjectID = 'mp1'
-              console.log('Click Time:' + clickTime)
-              sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              var count = parseInt(document.getElementById("cart")
-                                            .getAttribute('data-count')) + 1
-              document.getElementById("cart").setAttribute('data-count', count.toString())
-              document.getElementById("mp1-added").style.visibility = "visible"
+              logClick('mp1')
+              addToCart('mp1');
         })
-
 
         $("#mp2").on("click", function(d) {
-              // Retrieve the object from storage
-              var clickTime = Date.now()
-              var clickObjectID = 'mp2'
-              console.log('Click Time:' + clickTime)
-              sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              var count = parseInt(document.getElementById("cart")
-                                            .getAttribute('data-count')) + 1
-              document.getElementById("cart").setAttribute('data-count', count.toString())
-              document.getElementById("mp2-added").style.visibility = "visible"
+              logClick('mp2')
+              addToCart('mp2');
         })
 
-          $("#mp3").on("click", function(d) {
-              // Retrieve the object from storage
-              var clickTime = Date.now()
-              var clickObjectID = 'mp3'
-              console.log('Click Time:' + clickTime)
-              sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              var count = parseInt(document.getElementById("cart")
-                                            .getAttribute('data-count')) + 1
-              document.getElementById("cart").setAttribute('data-count', count.toString())
-              document.getElementById("mp3-added").style.visibility = "visible"
+        $("#mp3").on("click", function(d) {
+              logClick('mp3')
+              addToCart('mp3');
         })
 
-            $("#mp4").on("click", function(d) {
-              // Retrieve the object from storage
-              var clickTime = Date.now()
-              var clickObjectID = 'mp4'
-              console.log('Click Time:' + clickTime)
-              sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
-              var count = parseInt(document.getElementById("cart")
-                                            .getAttribute('data-count')) + 1
-              document.getElementById("cart").setAttribute('data-count', count.toString())
-              document.getElementById("mp4-added").style.visibility = "visible"
+        $("#mp4").on("click", function(d) {
+              logClick('mp4')
+              addToCart('mp4');
         })
+
+        function logClick(clickObjectID) {
+          var clickTime = Date.now()
+          console.log('Click Time:' + clickTime)
+          sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
+        }
+
+        // Adds item with given id to the cart.
+        function addToCart(item, num = 1) {
+          countId = item + "-added";
+          document.getElementById(countId).textContent = parseInt(document.getElementById(countId).textContent, 0) + num;
+          incrementCartCount(val = num);
+        }
+
+        // Helper function for adding an item to the cart. Logically and visually increments the cart count.
+        function incrementCartCount(val = 1) {
+          var cartCount = parseInt(document.getElementById("cart")
+                                            .getAttribute('data-count')) + val;
+          document.getElementById("cart").setAttribute('data-count', cartCount.toString())
+        }
+
+        function int(str) {
+            return parseInt(str, 0);
+        }
+
+        function navigateToCheckout() {
+          // Send number of items in cart to checkout page through URL params.
+          url = 'checkout.html?version=A';
+          Array.from(document.getElementsByClassName('vendor-wrapper')).forEach(el => {
+            numInCart = parseInt(document.getElementById(el.id + '-added').textContent, 0);
+            url += ('&' + el.id + '=' + numInCart)
+          })
+          document.location = url;
+        }
 
         function sendData(timeLoaded, clickTime, clickObjectID, cook){
               var dataObj = { 'version': 'A', 'pageLoadTime': timeLoaded ,
@@ -194,6 +212,16 @@
                         $(this).html("error!");
                     }
               });
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
      </script>
   </body>
