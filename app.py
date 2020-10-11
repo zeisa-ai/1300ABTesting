@@ -33,11 +33,16 @@ app.static_folder = 'static'
 # This is the root endpoint.
 @app.route('/', methods=['GET'])
 def root():
-    probability = random.uniform(0, 1)
-    if probability < 0.5:
-        return render_template('A.html')
+    version = request.args.get('version', default='', type=str)
+    if version:
+        page = version + '.html'
+        return render_template(page)
     else:
-        return render_template('B.html')
+        probability = random.uniform(0, 1)
+        if probability < 0.5:
+            return render_template('A.html')
+        else:
+            return render_template('B.html')
 
 # data endpoint
 @app.route('/data', methods=['GET', 'POST'])
@@ -72,6 +77,9 @@ def get_data():
             version, page_load_time, click_time, click_obj_id, unique_session_id])
     return "OK"
 
+@app.route('/checkout', methods=['GET'])
+def get_cart():
+    return render_template('checkout.html')
 
 # DO NOT CHANGE ANYTHING HERE
 # You might run into issues changing things here
