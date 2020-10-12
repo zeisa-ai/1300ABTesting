@@ -57,20 +57,21 @@
 
   <body>
     <header>
-      <h1>cact-I + cact-you = cact-us</h1>
+      <h1 style="text-align:center"> cact-I + cact-you = cact-us</h1>
+
       <!-- Ideas: making it pretty/look real, making it look reliable,
           choosing different images, changing layout, etc. Show your creativity!
           We want to see meaningful differences -->
       <!-- Feel free to beautify the site, and/or update the content-->
-      <i>An online succulent store
+      <h4 style="text-align:center"> An online succulent store
         for your inner plant lady.
-      </i>
+      </h4>
     </header>
 
     <!-- If you add any new buttons, you need to update the javascript file, for
     corresponding button id, so that clicks of that button could be logged -->
-    <div class="content-pane">
-      <div class="vendor-wrapper" id="mp1">
+    <div class="content-pane" style="background-color: lightblue">
+      <div style="padding:1em" align=center id="mp1">
         <img src="../static/coppercombo.png" class="vendor-photo" />
         <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">
           Add To Cart
@@ -81,9 +82,9 @@
         </p>
       </div>
 
-      <div class="vendor-wrapper" id="mp2">
+      <div style="padding:1em" align=center id="mp2">
         <img src="../static/geoprickly.jpg" class="vendor-photo" />
-        <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">
+        <button align=center class="vendor-book-button btn btn-primary" type="submit" id="mp2">
           Add To Cart
         </button>
         <span><span id="mp2-added">0</span> in cart</span>
@@ -91,7 +92,7 @@
         </p>
       </div>
 
-      <div class="vendor-wrapper" id="mp3">
+      <div style="padding:1em" align=center id="mp3">
         <img src="../static/garden.jpg" class="vendor-photo" />
         <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">
           Add To Cart
@@ -101,7 +102,7 @@
         </p>
       </div>
 
-      <div class="vendor-wrapper" id="mp4">
+      <div style="padding:1em" align=center id="mp4">
         <img src="../static/garden-combo.jpg" class="vendor-photo" />
         <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">
           Add To Cart
@@ -111,7 +112,7 @@
         </p>
       </div>
 
-      <div id="cart-wrapper">
+      <div style="padding:1em" align=center id="cart-wrapper">
         <a onclick='navigateToCheckout()'>
         <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
