@@ -1,0 +1,32 @@
+2020-10-30T00:31:33.371358+00:00 heroku[web.1]: Unidling
+2020-10-30T00:31:33.374326+00:00 heroku[web.1]: State changed from down to starting
+2020-10-30T00:31:39.020881+00:00 heroku[web.1]: Starting process with command `python app.py`
+2020-10-30T00:31:42.072174+00:00 app[web.1]: version pageLoadTime clickTime clickHTMLElementId UniqueSession
+2020-10-30T00:31:42.080788+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-10-30T00:31:42.080799+00:00 app[web.1]: * Environment: production
+2020-10-30T00:31:42.080808+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-10-30T00:31:42.080851+00:00 app[web.1]: Use a production WSGI server instead.
+2020-10-30T00:31:42.080925+00:00 app[web.1]: * Debug mode: on
+2020-10-30T00:31:42.100564+00:00 app[web.1]: * Running on http://0.0.0.0:42077/ (Press CTRL+C to quit)
+2020-10-30T00:31:42.101832+00:00 app[web.1]: * Restarting with stat
+2020-10-30T00:31:42.565224+00:00 heroku[web.1]: State changed from starting to up
+2020-10-30T00:31:42.657795+00:00 app[web.1]: version pageLoadTime clickTime clickHTMLElementId UniqueSession
+2020-10-30T00:31:42.678997+00:00 app[web.1]: * Debugger is active!
+2020-10-30T00:31:42.729143+00:00 app[web.1]: * Debugger PIN: 259-537-035
+2020-10-30T00:31:43.437158+00:00 heroku[router]: at=info method=GET path="/" host=fierce-oasis-69636.herokuapp.com request_id=551ee26c-2f54-4b77-9178-5d23836fba77 fwd="68.9.28.44" dyno=web.1 connect=0ms service=15ms status=200 bytes=8921 protocol=https
+2020-10-30T00:31:43.437740+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mGET / HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.561085+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mGET /static/main.css HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.563640+00:00 heroku[router]: at=info method=GET path="/static/main.css" host=fierce-oasis-69636.herokuapp.com request_id=cda751da-7776-485c-b3ea-2bf25bcf1ada fwd="68.9.28.44" dyno=web.1 connect=0ms service=8ms status=200 bytes=1117 protocol=https
+2020-10-30T00:31:43.626025+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mGET /static/coppercombo.png HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.634028+00:00 heroku[router]: at=info method=GET path="/static/coppercombo.png" host=fierce-oasis-69636.herokuapp.com request_id=bd9a4c58-80cc-4e72-bab0-9dbc5591586c fwd="68.9.28.44" dyno=web.1 connect=0ms service=18ms status=200 bytes=243856 protocol=https
+2020-10-30T00:31:43.706967+00:00 app[web.1]: 10.63.145.147 - - [30/Oct/2020 00:31:43] "[37mGET /static/geoprickly.jpg HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.738013+00:00 heroku[router]: at=info method=GET path="/static/geoprickly.jpg" host=fierce-oasis-69636.herokuapp.com request_id=670a8de0-8448-452c-99e6-b3a321892e20 fwd="68.9.28.44" dyno=web.1 connect=1ms service=39ms status=200 bytes=618300 protocol=https
+2020-10-30T00:31:43.741144+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mGET /static/garden.jpg HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.745308+00:00 heroku[router]: at=info method=GET path="/static/garden.jpg" host=fierce-oasis-69636.herokuapp.com request_id=a4fdcbcc-b66d-47bd-92f7-c1d7de268c45 fwd="68.9.28.44" dyno=web.1 connect=0ms service=10ms status=200 bytes=132444 protocol=https
+2020-10-30T00:31:43.776660+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mGET /static/garden-combo.jpg HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.782176+00:00 heroku[router]: at=info method=GET path="/static/garden-combo.jpg" host=fierce-oasis-69636.herokuapp.com request_id=920b7189-9832-4126-8ea5-98ef7ea06aa2 fwd="68.9.28.44" dyno=web.1 connect=0ms service=11ms status=200 bytes=160216 protocol=https
+2020-10-30T00:31:43.887904+00:00 app[web.1]: AB_TESTING: B 1604017903832 0 0 pqpnr
+2020-10-30T00:31:43.898743+00:00 app[web.1]: 10.35.179.103 - - [30/Oct/2020 00:31:43] "[37mPOST /data HTTP/1.1[0m" 200 -
+2020-10-30T00:31:43.899017+00:00 heroku[router]: at=info method=POST path="/data" host=fierce-oasis-69636.herokuapp.com request_id=7e8e106c-f02e-43b7-863a-3ce720540716 fwd="68.9.28.44" dyno=web.1 connect=0ms service=21ms status=200 bytes=155 protocol=https
+2020-10-30T00:31:44.818105+00:00 app[web.1]: 10.63.145.147 - - [30/Oct/2020 00:31:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-10-30T00:31:44.823667+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=fierce-oasis-69636.herokuapp.com request_id=59ec7e4d-96f4-4977-8f03-49bacc5b000d fwd="68.9.28.44" dyno=web.1 connect=1ms service=4ms status=404 bytes=394 protocol=https

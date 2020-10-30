@@ -1,0 +1,126 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.padding {
+  margin-left: 2%;
+  margin-right: auto;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+.padding3 {
+  margin-left: 5%;
+  margin-right: auto;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+.padding4 {
+  margin-left:10%;
+  margin-right: auto;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+
+.padding6 {
+  margin-left:auto;
+  margin-right: 10%;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+
+.padding7 {
+  margin-left:12%;
+  margin-right: auto;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+.padding8 {
+  margin-left:auto;
+  margin-right: 15%;
+  margin-top:2%;
+  margin-bottom: 1%;
+}
+
+.padding5 {
+  margin-left:35%;
+  margin-right: auto;
+  margin-top:1%;
+  margin-bottom: 1%;
+}
+.padding2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:0%;
+  margin-bottom: 0%;
+}
+
+.padding9 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:7%;
+  margin-bottom: 1%;
+}
+.container-fluid {
+  /* We first create a flex layout context */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+padding
+
+  flex-flow: column wrap;
+  /* align-items: stretch */
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  border: 10%;
+  min-width: 80%;
+
+}
+.content,.auto{
+  margin-left:auto;margin-right:auto;
+  margin-top: auto; margin-bottom: auto;
+}
+
+.m-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: column wrap;
+  /* align-items: stretch */
+  /* Then we define how is distributed the remaining space */
+  justify-content: center;
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  /* transform: translate(-50%, -50%);s */ */
+}
+body {
+  background-color: #f4eee1;
+  height: 100vh;
+}
+
+.column {
+  float: right;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after image containers */
+/* .row::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 5em;
+  margin-left: 0;
+  margin-right: 0;
+}
